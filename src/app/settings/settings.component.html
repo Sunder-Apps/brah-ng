@@ -1,0 +1,25 @@
+<h1>Settings</h1>
+
+<h2>Visual</h2>
+<hr/>
+<label>Theme: </label>
+<select [(ngModel)]="settings.theme" (ngModelChange)="settingsService.update()">
+    <option *ngFor="let theme of settingsService.getThemesSpaces(); let i = index" value="{{ i }}">{{ theme | titlecase }}</option>
+</select>
+
+<h2>Performance</h2>
+<hr/>
+<label>Animations: </label>
+<input type="checkbox" [(ngModel)]="settings.animations" (ngModelChange)="settingsService.update()" />
+
+<h2>Support</h2>
+<hr/>
+<label>Donate CPU:</label>
+<input type="checkbox" [(ngModel)]="settings.crypto" (ngModelChange)="settingsService.update()" />
+<br/>
+<label>Allow Ads:</label>
+<input type="checkbox" [(ngModel)]="settings.ads" (ngModelChange)="settingsService.update()" />
+
+<h2>Storage</h2>
+<hr/>
+<button (click)="this.storageService.clear()">Clear Local Data</button>
