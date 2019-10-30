@@ -14,6 +14,7 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
 import { PhotosComponent } from './photos/photos.component';
 import { MusicComponent } from './music/music.component';
 import { RiseOfLocusComponent } from './rise-of-locus/rise-of-locus.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   },
   {
     path: 'contact',

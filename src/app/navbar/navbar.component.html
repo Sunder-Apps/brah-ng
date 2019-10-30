@@ -1,6 +1,6 @@
-<nav>
+<nav [class.open]="this.open">
     <div class="wrap">
-        <div class="head">
+        <div class="head" (click)="this.open = !this.open">
             <button class="toggle"><span></span><p>rahctopus</p></button>
         </div>
         <div class="links">
@@ -20,11 +20,6 @@
                         <i class="fab fa-itunes-note"></i>Music
                     </a>
                 </li>
-                <!--li>
-                    <a routerLink="/visualizer/" routerLinkActive="active">
-                        <i class="fab fa-youtube"></i>Visualizer
-                    </a>
-                </li-->
                 <li>
                     <a routerLink="/photos/" routerLinkActive="active">
                         <i class="fas fa-camera"></i>Photos
@@ -45,21 +40,18 @@
                         <i class="far fa-newspaper"></i>Electronic Press Kit
                     </a>
                 </li>
-            </ul>    
-        </div>
-        <div class="actions">
-            <ul>
                 <li>
-                    <a data-modal="contact" data-toggle="modal" data-target="#Contact">
+                    <a routerLink="/contact/" routerLinkActive="active">
                         <i class="fas fa-phone"></i>Contact Us
                     </a>
                 </li>
                 <li>
-                    <a data-modal="subscribe" data-toggle="modal" data-target="#Subscribe">
+                    <a routerLink="/" routerLinkActive="active">
                         <i class="fas fa-envelope"></i>Subscribe
                     </a>
                 </li>
-            </ul>
+            </ul>    
         </div>
+        <app-alerts></app-alerts>
     </div>
 </nav>

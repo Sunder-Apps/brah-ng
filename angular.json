@@ -24,13 +24,18 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "src/assets/unityweb/enter-the-mothership/TemplateData/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/unityweb/enter-the-mothership/TemplateData/UnityProgress.js",
+              "src/assets/unityweb/enter-the-mothership/Build/UnityLoader.js"
+            ]
           },
           "configurations": {
             "production": {

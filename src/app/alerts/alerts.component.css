@@ -1,0 +1,39 @@
+.alerts {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+}
+.alerts .alert {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  transform: translate(0%, 0%);
+  transition: transform 300ms;
+}
+.alerts .alert p {
+  width: 100%;
+  margin: 5px 0;
+  line-height: 20px;
+}
+.alerts .alert .buttons {
+  display: flex;
+  align-items: flex-start;
+}
+.alerts .alert .buttons span {
+  padding: 0 10px 0 0;
+}
+.alerts .alert .buttons button {
+  text-transform: uppercase;
+}
+.alerts .alert.dismissed {
+  transform: translateX(-100%);
+}
+.alerts .alert.bumped {
+  transform: translateY(-100%);
+}

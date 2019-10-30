@@ -1,1 +1,185 @@
-/* You can add global styles to this file, and also import other style files */
+// out: false
+@import './global.less';
+@import './themes.less';
+@import './anime.less';
+@import './fonts.less';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    font-family: 'Palanquin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    .fluid(font-size, 576px, 1200px, 16px, 20px);
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: var(--fore);
+    background-color: var(--back);
+    overflow-x: hidden;
+
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        font-family: 'JosefinSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    a {
+        color: var(--fore);
+        transition: color 300ms, animation 300ms;
+        outline: 0;
+        border-radius: 2px;
+
+        &:hover, &:active, &:focus {
+            color: var(--action-focus);
+            text-decoration: none;
+
+            i.fab {
+
+                &.fa-facebook {
+                    color: var(--facebook-1);
+                }
+
+                &.fa-instagram {
+                    animation: 2s infinite ease-in-out alternate instafade;
+                }
+
+                &.fa-youtube {
+                    color: var(--youtube-1);
+                }
+
+                &.fa-itunes {
+                    color: var(--itunes-1);
+                }
+
+                &.fa-spotify {
+                    color: var(--spotify-1);
+                }
+
+                &.fa-google-play {
+                    color: var(--google-play-1);
+                }
+
+                &.fa-amazon {
+                    color: var(--amazon-1);
+                }
+
+                &.fa-napster {
+                    color: var(--napster-1);
+                }
+            }
+        }
+
+        &.active {
+            color: var(--action-active);
+        }
+
+        i.fab, i.fas {
+            cursor: pointer;
+            line-height: 30px;
+            transition: color 300ms, transform 300ms;
+        }
+    }
+
+    .container {
+        max-width: unset;
+        padding: 0 0 30px 60px;
+        overflow-x: hidden;
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 1em;
+            text-align: justify;
+            text-align-last: center;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+    }
+}
+
+table {
+    img {
+        max-width: 300px;
+    }
+}
+
+.input-group, .form-group {
+    button {
+        font-family: 'RacingSansOne', cursive;
+    }
+
+    input, textarea {
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &::-moz-placeholder,
+        &::placeholder {
+            font-family: 'RacingSansOne', cursive;
+        }
+    }
+}
+
+.input-group {
+    justify-content: center;
+    display: flex;
+
+    input {
+        width: 50%;
+        padding: 10px 20px;
+        border: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        color: var(--input);
+        background-color: var(--input-back);
+        .fluid(font-size, 576px, 1200px, 20px, 25px);
+    }
+
+    button {
+        padding-right: 15px;
+        border-width: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: var(--input);
+        background-color: var(--input-back);
+        .fluid(font-size, 576px, 1200px, 20px, 25px);
+        cursor: pointer;
+    }
+}
+
+.bg {
+    display: block;
+    opacity: 0;
+    height: 0;
+    width: 100%;
+}
+
+@media (orientation: portrait) {
+    body {
+        .container {
+            padding: 60px 0 30px 0;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<div class="alerts">
+    <div [id]="alert.alertId" class="alert" *ngFor="let alert of alerts">
+        <div *ngIf="!alert.disabled">
+            <p *ngIf="alert.message">{{ alert.message }}</p>
+            <div class="buttons">
+                <span *ngIf="alert.acceptText">
+                    <button class="accept" *ngIf="alert.accept else acceptNone" (click)="alert.accept()" (click)="dismiss(alert.alertId, 1)"><i class="fas fa-check"></i>{{ alert.acceptText }}</button>
+                    <ng-template #acceptNone>
+                        <button class="accept" (click)="dismiss(alert.alertId, 1)"><i class="fas fa-check"></i>{{ alert.acceptText }}</button>
+                    </ng-template>
+                </span>
+                <span *ngIf="alert.infoText">
+                    <button class="info" *ngIf="alert.info else infoNone" (click)="alert.info()" (click)="dismiss(alert.alertId, 2)"><i class="fas fa-exclamation"></i>{{ alert.infoText }}</button>
+                    <ng-template #infoNone>
+                        <button class="info" (click)="dismiss(alert.alertId, 2)"><i class="fas fa-exclamation"></i>{{ alert.infoText }}</button>
+                    </ng-template>
+                </span>
+                <span *ngIf="alert.linkText">
+                    <button class="action" *ngIf="alert.link else linkNone" (click)="alert.link()" (click)="dismiss(alert.alertId, 3)"><i class="fas fa-link"></i>{{ alert.linkText }}</button>
+                    <ng-template #linkNone>
+                        <button class="action" (click)="dismiss(alert.alertId, 3)"><i class="fas fa-link"></i>{{ alert.linkText }}</button>
+                    </ng-template>
+                </span>
+                <span *ngIf="alert.rejectText">
+                    <button class="reject" *ngIf="alert.reject else rejectNone" (click)="alert.reject()" (click)="dismiss(alert.alertId, 4)"><i class="fas fa-times"></i>{{ alert.rejectText }}</button>
+                    <ng-template #rejectNone>
+                        <button class="reject" (click)="dismiss(alert.alertId, 4)"><i class="fas fa-times"></i>{{ alert.rejectText }}</button>
+                    </ng-template>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

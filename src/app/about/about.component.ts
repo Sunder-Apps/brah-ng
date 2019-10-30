@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BackgroundService } from '../background/background.service';
+import { Background } from '../background/background'
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private backgroundService:BackgroundService) { }
 
   ngOnInit() {
   }
