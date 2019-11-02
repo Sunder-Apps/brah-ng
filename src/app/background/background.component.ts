@@ -30,7 +30,9 @@ export class BackgroundComponent implements OnInit {
       this.bg1.pos = bg.pos;
       this.active = true;
     })
-    this.onScrollEvent()
+    this.backgroundService.activate.subscribe(a => {
+      this.onScrollEvent()
+    })
   }
   
   onScrollEvent() {
@@ -40,18 +42,22 @@ export class BackgroundComponent implements OnInit {
         || document.documentElement.scrollTop 
         || document.body.scrollTop || 0
       let images = document.getElementsByClassName('bg')
+      console.log(images)
       if (images.length > 0) {
         let closestIndex = 0,
           closest = Math.abs(images[0].getBoundingClientRect().top - window.innerHeight / 4)
-        for (let i = 1; i < images.length - 1; i++) {
+        for (let i = 1; i < images.length; i++) {
           let top = Math.abs(images[i].getBoundingClientRect().top - window.innerHeight / 4)
+          console.log(top)
           if (top < closest) {
             closestIndex = i;
             closest = top
           }
         }
+        
         let src = images[closestIndex].getAttribute('src'),
             pos = images[closestIndex].getAttribute('pos')
+            console.log(closest, closestIndex, src, pos)
         this.backgroundService.update(new Background(src, pos))
       }
     }

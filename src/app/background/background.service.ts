@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
-import { Background } from './background';
+import { Injectable } from '@angular/core'
+import { Subject, Observable } from 'rxjs'
+import { Background } from './background'
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +9,16 @@ export class BackgroundService {
   private active:boolean = true
   private subject1:Subject<Background> = new Subject<Background>()
   private subject2:Subject<Background> = new Subject<Background>()
+  private subject3:Subject<boolean> = new Subject<boolean>()
   background1:Observable<Background> = this.subject1.asObservable()
   background2:Observable<Background> = this.subject2.asObservable()
+  activate:Observable<boolean> = this.subject3.asObservable()
   bg1:Background = new Background('', '')
   bg2:Background = new Background('', '')
 
-  constructor() { }
+  constructor () { }
 
-  update(bg:Background) {
+  update (bg:Background) {
     if (this.active) {
       if (this.bg2.src != bg.src) {
         this.bg1 = bg
@@ -32,7 +34,11 @@ export class BackgroundService {
     }
   }
 
-  updateString(src:string, pos:string) {
+  updateString (src:string, pos:string) {
     this.update(new Background(src, pos))
+  }
+
+  trigger () {
+    this.subject3.next(true)
   }
 }

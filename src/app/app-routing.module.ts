@@ -10,7 +10,6 @@ import { ContactComponent } from './contact/contact.component';
 import { ElectronicPressKitComponent } from './electronic-press-kit/electronic-press-kit.component';
 import { EnterTheMothershipComponent } from './enter-the-mothership/enter-the-mothership.component';
 import { StoreComponent } from './store/store.component';
-import { SubscribeComponent } from './subscribe/subscribe.component';
 import { PhotosComponent } from './photos/photos.component';
 import { MusicComponent } from './music/music.component';
 import { RiseOfLocusComponent } from './rise-of-locus/rise-of-locus.component';
@@ -67,11 +66,11 @@ const routes: Routes = [
   },
   {
     path: 'subscribe',
-    component: SubscribeComponent
+    component: HomeComponent
   },
   {
     path: "**",
-    component: NotFoundComponent
+    component: HomeComponent
   }
 ];
 

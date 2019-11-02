@@ -14,11 +14,9 @@ import { ElectronicPressKitComponent } from './electronic-press-kit/electronic-p
 import { AboutComponent } from './about/about.component'
 import { PhotosComponent } from './photos/photos.component'
 import { RiseOfLocusComponent } from './rise-of-locus/rise-of-locus.component'
-import { NavbarComponent } from './navbar/navbar.component'
 import { NotFoundComponent } from './not-found/not-found.component'
 import { HomeComponent } from './home/home.component'
 import { ContactComponent } from './contact/contact.component'
-import { SubscribeComponent } from './subscribe/subscribe.component'
 import { VisualizerComponent } from './visualizer/visualizer.component'
 import { FooterComponent } from './footer/footer.component'
 import { BackgroundComponent } from './background/background.component'
@@ -47,11 +45,9 @@ import { BackgroundService } from './background/background.service'
     AboutComponent,
     PhotosComponent,
     RiseOfLocusComponent,
-    NavbarComponent,
     NotFoundComponent,
     HomeComponent,
     ContactComponent,
-    SubscribeComponent,
     VisualizerComponent,
     FooterComponent,
     BackgroundComponent,

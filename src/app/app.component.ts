@@ -28,6 +28,7 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.barsService.setBar(Bar.NONE)
+        this.backgroundService.trigger()
       }
     })
     this.settingsService.settings.subscribe(settings => {
