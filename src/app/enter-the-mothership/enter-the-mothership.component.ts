@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 
 declare let UnityLoader:any;
 declare let UnityProgress:any;
@@ -12,10 +13,17 @@ export class EnterTheMothershipComponent implements OnInit {
   id = 'enter-the-mothership'
   version = '1.10'
   instance:any
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
-    this.instance = UnityLoader.instantiate(this.id, '/assets/unityweb/' + this.id + '/Build/EnterTheMothership' + this.version + '.json', { onProgress: UnityProgress })
+    this.router.events.forEach(event => {
+      if (event instanceof NavigationStart) {
+        if (this.instance) {
+          
+        }
+      }
+    })
+    //this.instance = UnityLoader.instantiate(this.id, '/assets/unityweb/' + this.id + '/Build/EnterTheMothership' + this.version + '.json', { onProgress: UnityProgress })
   }
 
   setFullScreen() {

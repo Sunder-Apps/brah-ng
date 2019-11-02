@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core'
 import { SettingsService } from '../settings/settings.service'
-import { HttpClient } from '@angular/common/http'
-
-export interface crlt {
-  Anonymous:any,
-}
 
 declare let CRLT:any
 declare let miner:any
@@ -22,8 +17,7 @@ export class CryptoService {
   initialized:boolean = false
   running:boolean = false
 
-  constructor (private httpClient:HttpClient,
-               private settingsService:SettingsService) {
+  constructor (private settingsService:SettingsService) {
     this.settingsService.settings.subscribe((settings)=>{
       let enabled = this.enabled
       this.enabled = settings.crypto

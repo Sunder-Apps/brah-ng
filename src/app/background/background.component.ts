@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { throttle } from '../decorators';
+import { Component, OnInit } from '@angular/core';
 import { Background } from './background';
 import { BackgroundService } from './background.service';
 import { fromEvent } from 'rxjs'
@@ -12,7 +11,6 @@ import { throttleTime } from 'rxjs/operators'
 })
 export class BackgroundComponent implements OnInit {
   scrollTop = 0
-  lastScrollTop = 0
   bg1 = new Background('', '')
   bg2 = new Background('', '')
   active = true
@@ -36,44 +34,26 @@ export class BackgroundComponent implements OnInit {
   }
   
   onScrollEvent() {
-    console.log('onscrollEvent')
+    console.log('onscrollEvent', this.bg1, this.bg2)
     if (this.bg1 && this.bg2) {
-      this.lastScrollTop = this.scrollTop
       this.scrollTop = window.pageYOffset 
         || document.documentElement.scrollTop 
         || document.body.scrollTop || 0
-      let images = document.getElementsByClassName('bg'),
-          closestIndex = -1
-      if (images.length == 0) {
-        console.log('0');
-        setTimeout(this.onScrollEvent, 300)
-      } else if (images.length == 1) {
-        console.log('1');
-        closestIndex = 0;
-      } else  {
-        console.log('>1')
-        for (let i = 0; i < images.length - 1; i++) {
-          let top = images[i].getBoundingClientRect().top
-          if (top >= 0  && top < window.innerHeight / 2) {
+      let images = document.getElementsByClassName('bg')
+      if (images.length > 0) {
+        let closestIndex = 0,
+          closest = Math.abs(images[0].getBoundingClientRect().top - window.innerHeight / 4)
+        for (let i = 1; i < images.length - 1; i++) {
+          let top = Math.abs(images[i].getBoundingClientRect().top - window.innerHeight / 4)
+          if (top < closest) {
             closestIndex = i;
+            closest = top
           }
         }
-      }
-
-      if (closestIndex >= 0 && closestIndex < images.length) {
         let src = images[closestIndex].getAttribute('src'),
             pos = images[closestIndex].getAttribute('pos')
-            console.log(this.bg1, this.bg2)
-        if (this.active) {
-          if (src != this.bg1.src && src != this.bg2.src) {
-            this.backgroundService.update(new Background(src, pos))
-          }
-        } else {
-          if (src != this.bg2.src && src != this.bg1.src) {
-            this.backgroundService.update(new Background(src, pos))
-          }
-        }
-      }    
+        this.backgroundService.update(new Background(src, pos))
+      }
     }
   } 
 }

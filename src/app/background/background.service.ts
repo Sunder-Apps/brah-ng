@@ -11,22 +11,28 @@ export class BackgroundService {
   private subject2:Subject<Background> = new Subject<Background>()
   background1:Observable<Background> = this.subject1.asObservable()
   background2:Observable<Background> = this.subject2.asObservable()
+  bg1:Background = new Background('', '')
+  bg2:Background = new Background('', '')
 
   constructor() { }
 
   update(bg:Background) {
     if (this.active) {
-      this.subject1.next(bg)
+      if (this.bg2.src != bg.src) {
+        this.bg1 = bg
+        this.subject1.next(this.bg1)
+        this.active = !this.active
+      }
     } else {
-      this.subject2.next(bg)
+      if (this.bg1.src != bg.src) {
+        this.bg2 = bg
+        this.subject2.next(this.bg2)
+        this.active = !this.active
+      }
     }
   }
 
   updateString(src:string, pos:string) {
-    if (this.active) {
-      this.subject1.next(new Background(src,pos))
-    } else {
-      this.subject2.next(new Background(src, pos))
-    }
+    this.update(new Background(src, pos))
   }
 }
