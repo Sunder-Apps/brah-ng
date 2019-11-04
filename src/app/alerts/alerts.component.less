@@ -1,43 +1,59 @@
+// out: false
 .alerts {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 30px;
+    z-index: 99999;
+    pointer-events: none;
+}
 
-    .alert {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        left: 0;
-        bottom :0;
-        width: 100%;
-        height: 30px;
-        transform: translate(0%, 0%);
-        transition: transform 300ms;
-        p {
-            width: 100%;
-            margin: 5px 0;
-            line-height: 20px;
-        }
-        .buttons {
-            display: flex;
-            align-items: flex-start;
+.alert {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom :0;
+    width: 100%;
+    min-height: 30px;
+    padding: 0 10px;
+    transform: translate(0%, 0%);
+    transition: transform 300ms;
+    background-color: var(--black);
+    pointer-events: auto;
 
-            span {
-                padding: 0 10px 0 0;
-            }
-            button {
-                text-transform: uppercase;
-            }
-        }
-
-        &.dismissed {
-            transform: translateX(-100%);
-        }
-
-        &.bumped {
-            transform: translateY(-100%);
-        }
+    &.dismissed {
+        transform: translateX(-100%);
     }
+
+    &.bumped {
+        transform: translateY(-100%);
+    }
+}
+
+p {
+    width: auto;
+    margin: 5px auto 5px 0;
+    line-height: 20px;
+    padding-left: 5px;
+}
+
+span {
+    padding: 0 10px 0 0;
+}
+
+button {
+    display: flex;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 2.5px 5px;
+    height: 20px;
+    margin: 5px 0;
+}
+
+i {
+    padding: 0 5px;
 }

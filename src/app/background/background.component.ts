@@ -13,7 +13,9 @@ export class BackgroundComponent implements OnInit {
   scrollTop = 0
   bg1 = new Background('', '')
   bg2 = new Background('', '')
-  active = true
+  bg3 = new Background('', '')
+  bg4 = new Background('', '')
+  active = 0
   subscription = fromEvent(window, 'scroll')
                  .pipe(throttleTime(500))
                  .subscribe(() => this.onScrollEvent())
@@ -21,14 +23,24 @@ export class BackgroundComponent implements OnInit {
 
   ngOnInit() {
     this.backgroundService.background1.subscribe(bg => {
-      this.bg2.src = bg.src;
-      this.bg2.pos = bg.pos;
-      this.active = false;
+      this.bg1.src = bg.src;
+      this.bg1.position = bg.position;
+      this.active = 1;
     })
     this.backgroundService.background2.subscribe(bg => {
-      this.bg1.src = bg.src;
-      this.bg1.pos = bg.pos;
-      this.active = true;
+      this.bg2.src = bg.src;
+      this.bg2.position = bg.position;
+      this.active = 2;
+    })
+    this.backgroundService.background3.subscribe(bg => {
+      this.bg3.src = bg.src;
+      this.bg3.position = bg.position;
+      this.active = 3;
+    })
+    this.backgroundService.background4.subscribe(bg => {
+      this.bg4.src = bg.src;
+      this.bg4.position = bg.position;
+      this.active = 4;
     })
     this.backgroundService.activate.subscribe(a => {
       this.onScrollEvent()
@@ -36,19 +48,16 @@ export class BackgroundComponent implements OnInit {
   }
   
   onScrollEvent() {
-    console.log('onscrollEvent', this.bg1, this.bg2)
-    if (this.bg1 && this.bg2) {
+    if (this.bg1) {
       this.scrollTop = window.pageYOffset 
         || document.documentElement.scrollTop 
         || document.body.scrollTop || 0
       let images = document.getElementsByClassName('bg')
-      console.log(images)
       if (images.length > 0) {
         let closestIndex = 0,
           closest = Math.abs(images[0].getBoundingClientRect().top - window.innerHeight / 4)
         for (let i = 1; i < images.length; i++) {
           let top = Math.abs(images[i].getBoundingClientRect().top - window.innerHeight / 4)
-          console.log(top)
           if (top < closest) {
             closestIndex = i;
             closest = top
@@ -56,9 +65,10 @@ export class BackgroundComponent implements OnInit {
         }
         
         let src = images[closestIndex].getAttribute('src'),
-            pos = images[closestIndex].getAttribute('pos')
-            console.log(closest, closestIndex, src, pos)
-        this.backgroundService.update(new Background(src, pos))
+            position = images[closestIndex].getAttribute('position'),
+            transform = images[closestIndex].getAttribute('transform')
+            console.log(src, position, transform)
+        this.backgroundService.update(new Background(src, position, transform))
       }
     }
   } 

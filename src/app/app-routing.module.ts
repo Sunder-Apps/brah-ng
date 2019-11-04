@@ -14,6 +14,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { MusicComponent } from './music/music.component';
 import { RiseOfLocusComponent } from './rise-of-locus/rise-of-locus.component';
 import { CartComponent } from './cart/cart.component';
+import { VisualizerComponent } from './visualizer/visualizer.component';
 
 const routes: Routes = [
   {
@@ -69,8 +70,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'visualizer',
+    component: VisualizerComponent
+  },
+  {
     path: "**",
-    component: HomeComponent
+    component: NotFoundComponent
   }
 ];
 

@@ -1,11 +1,22 @@
 // out: false
-iframe {
-    width: 100%;
-    height: ~"calc(100vh - 30px)";
-    margin: auto;
-    border: 0;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (orientation: portrait) {
-    height: ~"calc(100vh - 90px)";
+.links {
+    background-color: var(--trans);
+    border-radius: 25px;
+    font-size: 3em;
+    padding: 0 20px;
+
+    a {
+        padding: 10px;
+    }
+
+    i {
+        width: 60px;
+    }
 }

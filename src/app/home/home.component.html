@@ -1,16 +1,16 @@
 <div class="container">
     <div class="splash">
-        <img class="bg" src="https://i.imgur.com/abzKAsM.png" data-position="calc(50% + 30px) 50%" />
+        <img class="bg" src="https://i.imgur.com/abzKAsM.png" position="50% 50%" />
         <h1>Brahctopus</h1>
         <h2>Mothership</h2>
-        <a href="/listen/" data-page="listen"><h3>Listen Now!</h3></a>
+        <a routerLink="/music/"><h3>Listen Now!</h3></a>
         <div class="subscribe">
             <p>Join our mailing list for the latest ink</p>
             <div class="input-group">
-                <input id="email" name="email" type="email" placeholder="Email" />
-                <button class="btn btn-lg btn-outline-light">Sign Up</button>
+                <input [(ngModel)]="this.email" name="email" type="email" placeholder="Email" />
+                <button (click)="this.send()">Sign Up</button>
             </div>
         </div>
-        <div></div>
+        <div class="fade"></div>
     </div>
 </div>

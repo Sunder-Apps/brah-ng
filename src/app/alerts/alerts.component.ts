@@ -9,12 +9,14 @@ import { Alert, Answer } from './alert';
 })
 export class AlertsComponent implements OnInit {
   alerts:Alert[]
+  alert:Alert
 
   constructor(private alertsService:AlertsService) { }
 
   ngOnInit() { 
     this.alertsService.alerts.subscribe((alerts) => {
       this.alerts = alerts;
+      this.alert = this.alerts[this.alerts.length - 1]
     })
     this.alertsService.update();
   }

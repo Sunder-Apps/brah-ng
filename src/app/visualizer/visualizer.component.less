@@ -1,19 +1,35 @@
 // out: false
 
 .vis {
-    .vis-grid {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: repeat(auto-fit, minmax(0px, 600px));
-        grid-auto-rows: 340px;
-        grid-auto-flow: row dense;
-        justify-content: center;
-        padding: 20px;
-        
-        iframe {
-            width: 100%;
-            max-width: 600px;
-            height: 340px;
-        }
-    }
+    text-align: center;
 } 
+
+.vis-grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 600px));
+    grid-auto-rows: 340px;
+    grid-auto-flow: row dense;
+    justify-content: center;
+    padding: 20px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 340px;
+}
+
+img.sunder {
+    width: 150px;
+    background-color: var(--black);
+    border-radius: 50%;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+p {
+    margin: 0;
+}

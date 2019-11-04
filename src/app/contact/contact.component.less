@@ -6,12 +6,16 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 5%;
+    padding-left: ~"calc(5% + 60px)";
 }
 
-td {
-    vertical-align: top;
+i {
+    padding: 0 5px;
+}
 
-    &:nth-child(1) {
-        text-align: right;
+@media (orientation: portrait) {
+    input, textarea {
+        padding-left: 5%;
     }
 }

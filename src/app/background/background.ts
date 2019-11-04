@@ -1,6 +1,7 @@
 export class Background {
     constructor (
         public src: string,
-        public pos: string
+        public position?: string,
+        public transform?: string
     ) {}
 }

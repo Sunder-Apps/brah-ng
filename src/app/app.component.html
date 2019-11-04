@@ -1,5 +1,7 @@
-<app-bars></app-bars>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
-<!--app-alerts></app-alerts-->
-<app-background></app-background> 
+<div id="theme" [class.dark]="theme == 1" [class.light]="theme == 2" [class.konami]="konami" [class.snap]="snap">
+    <app-bars></app-bars>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+    <app-alerts></app-alerts>
+    <app-background></app-background>
+</div>

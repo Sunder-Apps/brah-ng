@@ -1,10 +1,11 @@
 // out: false
 .background {
     position: fixed;
-    left: 50px;
+    left: 60px;
     top: 0;
-    width: ~"calc(100% - 50px)";
+    width: ~"calc(100% - 60px)";
     height: 100vh;
+    object-fit: cover;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,11 +18,16 @@
     }
 }
 
+video {
+    transform: scale(1.2);
+    transform-origin: top;
+}
+
 @media (orientation: portrait) {
     .background {
         left: 0;
-        top: 50px;
+        top: 60px;
         width: 100vw;
-        height: ~"calc(100% - 50px)";
+        height: ~"calc(100% - 90px)";
     }
 }

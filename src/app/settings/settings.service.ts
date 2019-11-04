@@ -13,13 +13,13 @@ export class SettingsService {
   list:Settings = new Settings();
 
   constructor(private storageService:StorageService) {
-    this.storageService.set(this.list.settingsId, '');
+    //this.storageService.set(this.list.settingsId, '');
     this.load();
   }
 
   load () {
     let str = this.storageService.get(this.list.settingsId),
-      json:any;
+        json:any;
     if (str !== null && str !== undefined && str !== '') {
       json = JSON.parse(str);
       if (json !== null && json !== undefined) {
@@ -33,8 +33,10 @@ export class SettingsService {
     if (key === 'settingsId') {
       return
     }
-    if (this.settings[key] && typeof(this.settings[key]) === typeof(value)) {
-      this.settings[key] = value;
+    console.log('set')
+    if (this.list[key] && typeof(this.list[key]) === typeof(value)) {
+      console.log(key, value)
+      this.list[key] = value;
       this.update();
     }
   }

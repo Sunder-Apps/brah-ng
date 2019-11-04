@@ -29,6 +29,7 @@ import { LeftComponent } from './bars/left/left.component'
 import { SettingsComponent } from './settings/settings.component'
 import { SettingsService } from './settings/settings.service'
 import { BackgroundService } from './background/background.service'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { BackgroundService } from './background/background.service'
     AppRoutingModule,
     FormsModule,
     LeafletModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
     AdsService,

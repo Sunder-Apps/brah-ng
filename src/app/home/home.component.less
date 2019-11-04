@@ -59,6 +59,19 @@
     }
 }
 
+span {
+    font-family: 'RacingSansOne', cursive;
+    font-size: 2em;
+    border-radius: 10px;
+    &.success {
+        color: var(--back);
+        background-color: var(--accept);
+    }
+    &.failure {
+        background-color: var(--danger);
+    }
+}
+
 @media (max-width: 500px) {
     .container {
         .splash {
