@@ -17,7 +17,7 @@ export class BackgroundComponent implements OnInit {
   bg4 = new Background('', '')
   active = 0
   subscription = fromEvent(window, 'scroll')
-                 .pipe(throttleTime(500))
+                 .pipe(throttleTime(200))
                  .subscribe(() => this.onScrollEvent())
   constructor(private backgroundService:BackgroundService) { }
 
