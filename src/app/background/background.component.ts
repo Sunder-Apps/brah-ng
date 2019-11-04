@@ -67,7 +67,6 @@ export class BackgroundComponent implements OnInit {
         let src = images[closestIndex].getAttribute('src'),
             position = images[closestIndex].getAttribute('position'),
             transform = images[closestIndex].getAttribute('transform')
-            console.log(src, position, transform)
         this.backgroundService.update(new Background(src, position, transform))
       }
     }

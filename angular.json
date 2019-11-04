@@ -27,14 +27,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less",
-              "node_modules/leaflet/dist/leaflet.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "src/assets/unityweb/enter-the-mothership/TemplateData/style.css"
+              "src/styles.less"
             ],
             "scripts": [
-              "src/assets/unityweb/enter-the-mothership/TemplateData/UnityProgress.js",
-              "src/assets/unityweb/enter-the-mothership/Build/UnityLoader.js"
             ]
           },
           "configurations": {
