@@ -10,8 +10,8 @@ import { StorageService } from '../storage/storage.service';
   styleUrls: ['./settings.component.less']
 })
 export class SettingsComponent implements OnInit {
-  settings:Settings;
-  
+  settings:Settings
+  themes:string[]
   constructor(private settingsService:SettingsService,
     private storageService:StorageService) {
     this.settingsService.settings.subscribe((settings) => {
@@ -20,5 +20,15 @@ export class SettingsComponent implements OnInit {
     this.settingsService.update()
   }
   
-  ngOnInit() { }
+  ngOnInit() {
+    this.settingsService.getThemesSpaces()
+  }
+
+  update () {
+    this.settingsService.update()
+  }
+
+  clear () {
+    this.storageService.clear()
+  }
 }

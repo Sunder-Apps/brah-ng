@@ -30,6 +30,8 @@ import { SettingsComponent } from './settings/settings.component'
 import { SettingsService } from './settings/settings.service'
 import { BackgroundService } from './background/background.service'
 import { HttpClientModule } from '@angular/common/http'
+import { ContactService } from './contact/contact.service'
+import { SubscribeService } from './subscribe/subscribe.service'
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { HttpClientModule } from '@angular/common/http'
     BarsService,
     CryptoService,
     SettingsService,
-    BackgroundService
+    BackgroundService,
+    ContactService,
+    SubscribeService
   ],
   bootstrap: [AppComponent]
 })

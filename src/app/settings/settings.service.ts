@@ -14,7 +14,7 @@ export class SettingsService {
 
   constructor(private storageService:StorageService) {
     //this.storageService.set(this.list.settingsId, '');
-    this.load();
+    this.load()
   }
 
   load () {
@@ -33,9 +33,7 @@ export class SettingsService {
     if (key === 'settingsId') {
       return
     }
-    console.log('set')
     if (this.list[key] && typeof(this.list[key]) === typeof(value)) {
-      console.log(key, value)
       this.list[key] = value;
       this.update();
     }

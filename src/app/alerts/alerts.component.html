@@ -1,5 +1,5 @@
 <div class="alerts" *ngIf="this.alert">
-    <div *ngIf="!this.alert.disabled" class="alert {{ this.alert.alertClass }}" [style.z-index]="i">
+    <div *ngIf="!this.alert.disabled" class="alert {{ this.alert.alertClass }}">
         <p *ngIf="this.alert.message" title="{{ this.alert.message }}">{{ this.alert.message }}</p>
         <span *ngIf="this.alert.acceptText">
             <button class="accept" *ngIf="this.alert.accept else acceptNone" (click)="this.alert.accept()" (click)="dismiss(this.alert.alertId, 1)"><i class="fas fa-check"></i>{{ this.alert.acceptText }}</button>
