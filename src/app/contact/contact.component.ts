@@ -10,9 +10,12 @@ import { Alert, Answer } from '../alerts/alert'
   styleUrls: ['./contact.component.less']
 })
 export class ContactComponent implements OnInit {
+  name = ''
+  email = ''
+  subject = ''
+  message = ''
   sendToEmail = 'brahctopus@gmail.com'
   sendToName = 'Brahctopus Ink'
-  contact:Contact = new Contact('', '', '', '', this.sendToEmail, this.sendToName)
 
   constructor(private contactService:ContactService,
               private alertsService:AlertsService) { }
@@ -20,7 +23,7 @@ export class ContactComponent implements OnInit {
   ngOnInit () { }
 
   send () {
-    this.contactService.send(this.contact).subscribe(
+    this.contactService.send(new Contact(this.name, this.email, this.subject, this.message, this.sendToEmail, this.sendToName)).subscribe(
       success => {
         console.log(success)
         this.alertsService.push({
