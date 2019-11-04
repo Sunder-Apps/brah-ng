@@ -31,7 +31,8 @@ import { SettingsService } from './settings/settings.service'
 import { BackgroundService } from './background/background.service'
 import { HttpClientModule } from '@angular/common/http'
 import { ContactService } from './contact/contact.service'
-import { SubscribeService } from './subscribe/subscribe.service'
+import { SubscribeService } from './subscribe/subscribe.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { SubscribeService } from './subscribe/subscribe.service'
     AppRoutingModule,
     FormsModule,
     LeafletModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AdsService,
