@@ -13,7 +13,7 @@ import { BackgroundService } from './background/background.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  theme:Theme = Theme.DEVICE_PREFERENCE
+  theme:Theme = Theme.DARK
   snap:boolean = false
   konami:boolean = false
   konamiCode:number[] = [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ]
