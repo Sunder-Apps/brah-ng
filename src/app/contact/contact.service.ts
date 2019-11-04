@@ -11,6 +11,6 @@ export class ContactService {
   constructor(private httpClient:HttpClient) { }
 
   send (contact:Contact) {
-    return this.httpClient.post(this.url, contact)
+    return this.httpClient.post(this.url, JSON.stringify(contact))
   }
 }
