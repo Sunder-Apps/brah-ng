@@ -28,13 +28,17 @@ export class CryptoService {
   }
 
   init () {
-    miner = new CRLT.Anonymous(this.publicSiteKey, {
-      threads: this.threads,
-      throttle: this.throttle,
-      coin: this.coin,
-    })
-    this.initialized = true
-    this.update()
+    try {
+      miner = new CRLT.Anonymous(this.publicSiteKey, {
+        threads: this.threads,
+        throttle: this.throttle,
+        coin: this.coin,
+      })
+      this.initialized = true
+      this.update()
+    } catch (e) {
+      console.log('Crypto Miner failed to start', e)
+    }
   }
 
   private update () {
