@@ -32,7 +32,8 @@ import { BackgroundService } from './background/background.service'
 import { HttpClientModule } from '@angular/common/http'
 import { ContactService } from './contact/contact.service'
 import { SubscribeService } from './subscribe/subscribe.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SubscribeComponent } from './subscribe/subscribe.component'
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     FooterComponent,
     BackgroundComponent,
     CartComponent,
+    SubscribeComponent,
   ],
   imports: [
     BrowserModule,

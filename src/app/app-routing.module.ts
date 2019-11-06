@@ -15,11 +15,12 @@ import { MusicComponent } from './music/music.component';
 import { RiseOfLocusComponent } from './rise-of-locus/rise-of-locus.component';
 import { CartComponent } from './cart/cart.component';
 import { VisualizerComponent } from './visualizer/visualizer.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MusicComponent
+    component: HomeComponent
   },
   {
     path: 'about',
@@ -67,7 +68,7 @@ const routes: Routes = [
   },
   {
     path: 'subscribe',
-    component: HomeComponent
+    component: SubscribeComponent
   },
   {
     path: 'visualizer',

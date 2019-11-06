@@ -11,35 +11,35 @@ footer {
     height: 30px;
     text-align: center;
     transition: left 300ms;
-    background-color: var(--black);
-    z-index: 999;
+    background-color: var(--back);
+    z-index: 999; 
+}
 
-    span {
+span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 30px;
+
+    a {
+        height: 30px;
+    }
+
+    p {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
         height: 30px;
-
-        a {
-            height: 30px;
-        }
-
-        p {
-            display: flex;
-            align-items: center;
-            height: 30px;
-            margin: 0 5px;
-        }
+        margin: 0 5px;
     }
+}
 
-    img.sunder {
-        height: 30px;
-    }
+img.sunder {
+    height: 30px;
+}
 
-    i {
-        padding: 0 5px;
-        line-height: 30px;
-        .fluid(font-size, 576px, 1200px, 15px, 20px);
-    }
+i {
+    padding: 0 5px;
+    line-height: 30px;
+    .fluid(font-size, 576px, 1200px, 15px, 20px);
 }

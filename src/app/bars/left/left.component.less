@@ -81,6 +81,7 @@ nav {
         li {
             height: 60px;
             cursor: pointer;
+            filter: brightness(0.8);
             transition: filter 300ms;
     
             a {
@@ -118,24 +119,11 @@ nav {
             }
 
             &:hover, &:active, &:focus {
-                filter: brightness(0.8);
+                filter: brightness(1);
 
                 i {
                     border-left: 5px solid;
-                    &.fa-gamepad {
-                        border-color: var(--green);
-                        color: var(--green);
-                    }
-
-                    &.fa-video {
-                        border-color: var(--violet);
-                        color: var(--violet);
-                    }
-
-                    &.fa-camera {
-                        border-color: var(--orange);
-                        color: var(--orange);
-                    }
+                    border-color: var(--brah-blue-light);
                 }
             }
         }    
@@ -180,56 +168,6 @@ nav {
 
             &:hover, &:active, &:focus, &.open {
                 border-color: var(--brah-blue);
-            }
-        }
-    }
-
-    ul {
-        li {
-            &:hover {
-                filter: brightness(1);
-
-                i {
-                    &.fa-cash-register {
-                        border-color: #e1b137;
-                        color: #e1b137;
-                    }
-
-                    &.fa-itunes-note {
-                        border-color: #7eaacd;
-                        color: #7eaacd;
-                    }
-
-                    &.fa-youtube {
-                        border-color: red;
-                        color: red;
-                    }
-
-                    &.fa-address-card {
-                        border-color: #00cc00;
-                        color: #00cc00;
-                    }
-
-                    &.fa-book {
-                        border-color: #ca1cca;
-                        color: #ca1cca;
-                    }
-
-                    &.fa-newspaper {
-                        border-color: #00b3b3;
-                        color: #00b3b3;
-                    }
-
-                    &.fa-phone {
-                        border-color: darkslategray;
-                        color: darkslategray;
-                    }
-
-                    &.fa-envelope {
-                        border-color: darkslateblue;
-                        color: darkslateblue;
-                    }
-                }
             }
         }
     }
