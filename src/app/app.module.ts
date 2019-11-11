@@ -1,8 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { LeafletModule } from '@asymmetrik/ngx-leaflet'
 import { AppRoutingModule } from './app-routing.module'
+import { MatButtonModule } from '@angular/material/button'
+import { MatTooltipModule } from '@angular/material/tooltip'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { MatChipsModule } from '@angular/material/chips'
+import { MatListModule } from '@angular/material/list'
 
 import { AppComponent } from './app.component'
 import { AlertsComponent } from './alerts/alerts.component'
@@ -63,9 +69,16 @@ import { SubscribeComponent } from './subscribe/subscribe.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     LeafletModule.forRoot(),
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatChipsModule,
+    MatListModule
   ],
   providers: [
     AdsService,

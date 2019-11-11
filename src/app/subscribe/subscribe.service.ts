@@ -10,8 +10,8 @@ export class SubscribeService {
   constructor(private httpClient:HttpClient) { }
 
   send (email:string) {
-    return this.httpClient.post(this.url, { 
+    return this.httpClient.post(this.url, JSON.stringify({ 
       email: email 
-    })
+    }))
   }
 }

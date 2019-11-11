@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { SubscribeService } from './subscribe.service';
-import { AlertsService } from '../alerts/alerts.service';
-import { Answer } from '../alerts/alert';
+import { Component, OnInit } from '@angular/core'
+import { SubscribeService } from './subscribe.service'
+import { AlertsService } from '../alerts/alerts.service'
+import { Answer } from '../alerts/alert'
 
 @Component({
   selector: 'app-subscribe',
@@ -9,7 +9,7 @@ import { Answer } from '../alerts/alert';
   styleUrls: ['./subscribe.component.less']
 })
 export class SubscribeComponent implements OnInit {
-  email:string = ''
+  email = ''
   constructor(private subscribeService:SubscribeService,
               private alertsService:AlertsService) { }
 

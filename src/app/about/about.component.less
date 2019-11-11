@@ -1,27 +1,4 @@
 // out: false
-
-.about {
-    .entry {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        margin: 0 auto 10rem auto;
-        width: 90%;
-        min-height: 100vh;
-    
-        &:last-of-type {
-            margin-bottom: 100vh;
-        }
-
-        .content {
-            padding: 2.5%;
-            border-radius: 5px;
-            background-color: var(--trans);
-        }
-    }
-}
-
 h4 {
     font-size: 1.2em;
 }
@@ -56,23 +33,6 @@ table {
     }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    .about {
-        .entry {
-            width: 70%;
-        }
-    }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+.page:last-child {
+    margin-bottom: 100vh;
 }
