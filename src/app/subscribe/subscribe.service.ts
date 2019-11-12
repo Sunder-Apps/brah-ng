@@ -12,6 +12,8 @@ export class SubscribeService {
   send (email:string) {
     return this.httpClient.post(this.url, JSON.stringify({ 
       email: email 
-    }))
+    }), {
+      responseType: 'text'
+    })
   }
 }
