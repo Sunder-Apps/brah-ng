@@ -80,7 +80,7 @@ export class ElectronicPressKitComponent implements OnInit {
       {
         "name": "Apple Music",
         "icon": "fab fa-itunes-note",
-        "url": "http://geo.itunes.apple.com/us/album/mothership/1450453947?uo=4&app=music&ls=1&at=1000lHKX"
+        "url": "https://geo.itunes.apple.com/us/album/mothership/1450453947?uo=4&app=music&ls=1&at=1000lHKX"
       },
       {
         "name": "Spotify",
@@ -90,17 +90,17 @@ export class ElectronicPressKitComponent implements OnInit {
       {
         "name": "Google Play Music",
         "icon": "fab fa-google-play",
-        "url": "http://geo.itunes.apple.com/us/album/mothership/1450453947?uo=4&app=music&ls=1&at=1000lHKX"
+        "url": "https://play.google.com/music/m/Bwva5lw7shol2cvkgf63yli24le?signup_if_needed=1"
       },
       {
         "name": "Amazon Music",
         "icon": "fab fa-amazon",
-        "url": "http://geo.itunes.apple.com/us/album/mothership/1450453947?uo=4&app=music&ls=1&at=1000lHKX",
+        "url": "https://music.amazon.com/albums/B07N289L4D?do=play",
       },
       {
         "name": "Napster",
         "icon": "fab fa-napster",
-        "url": "http://geo.itunes.apple.com/us/album/mothership/1450453947?uo=4&app=music&ls=1&at=1000lHKX"
+        "url": "https://napster.com/artist/art.348960426/album/alb.348960429"
       },
       {
           "name": "Live Video",
@@ -121,6 +121,11 @@ export class ElectronicPressKitComponent implements OnInit {
         "name": "VR Audio Visualizers",
         "icon": "fab fa-youtube",
         "url": "https://www.youtube.com/playlist?list=PLHSK04x2gyOTyral2ZunzJuQKsonHvV2R"
+      },
+      {
+        "name": "GareFest 2019 Photos",
+        "icon": "fab fa-facebook",
+        "url": "https://www.facebook.com/pg/krysonphoto/photos/?tab=album&album_id=920952498253654"
       }
     ],
     "press": [

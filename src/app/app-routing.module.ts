@@ -9,13 +9,14 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ElectronicPressKitComponent } from './electronic-press-kit/electronic-press-kit.component';
 import { EnterTheMothershipComponent } from './enter-the-mothership/enter-the-mothership.component';
-import { StoreComponent } from './store/store.component';
+//import { StoreComponent } from './store/store.component';
 import { PhotosComponent } from './photos/photos.component';
 import { MusicComponent } from './music/music.component';
 import { RiseOfLocusComponent } from './rise-of-locus/rise-of-locus.component';
 import { CartComponent } from './cart/cart.component';
 import { VisualizerComponent } from './visualizer/visualizer.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
+import { AppsComponent } from './apps/apps.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,14 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'app',
+    component: AppsComponent
+  },
+  {
+    path: 'apps',
+    component: AppsComponent
   },
   {
     path: 'cart',
@@ -61,10 +70,6 @@ const routes: Routes = [
   {
     path: 'settings',
     component: SettingsComponent
-  },
-  {
-    path: 'store',
-    component: StoreComponent
   },
   {
     path: 'subscribe',
