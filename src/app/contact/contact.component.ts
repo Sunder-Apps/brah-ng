@@ -29,7 +29,8 @@ export class ContactComponent implements OnInit {
         this.alertsService.push({
           alertId: 'brah-alerts-contact-success-0',
           alertClass: 'info',
-          message: 'Success! Brahctopus has received your message.',
+          title: 'Success!',
+          message: 'Brahctopus has received your message. We will get back to you as quickly as possible.',
           reject: () => { },
           rejectText: 'Dismiss',
           disabled: false,
@@ -41,7 +42,8 @@ export class ContactComponent implements OnInit {
         this.alertsService.push({
           alertId: 'brah-alerts-contact-failure-0',
           alertClass: 'danger',
-          message: 'Something went wrong!  Email the Brahs directly at brahctopus@gmail.com',
+          title: 'Error!',
+          message: 'Something went wrong.  Email the Brahs directly at brahctopus@gmail.com',
           link: () => { window.open('mailto:brahctopus@gmail.com', '_blank') },
           linkText: 'Go',
           reject: () => {},

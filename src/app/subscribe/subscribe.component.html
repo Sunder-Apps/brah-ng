@@ -1,12 +1,15 @@
 <img class="bg" src="https://i.imgur.com/abzKAsM.png" position="50% 50%" />
 <div class="container c">
-    <div class="input-group">
-        <mat-form-field appearance="fill">
-            <mat-label><i class="fas fa-envelope"></i>&nbsp;Email</mat-label>
-            <input name="email" type="email" #emailInput="ngModel" matInput [(ngModel)]="this.email" required email />
-            <mat-hint>Join the mailing list for the latest 🐙</mat-hint>
-            <mat-hint class="danger" *ngIf="emailInput.invalid && emailInput.dirty">Please enter a valid email address</mat-hint>
-        </mat-form-field>
-    </div>
-    <button (click)="this.send()" disabled="{{ emailInput.pristine || emailInput.invalid && emailInput.dirty }}" mat-flat-button color="primary"><i class="fab fa-mailchimp"></i>&nbsp;Subscribe</button>
+    <form *ngIf="!this.sending">
+        <div class="input-group">
+            <mat-form-field appearance="fill">
+                <mat-label><i class="fas fa-envelope"></i>&nbsp;Email</mat-label>
+                <input name="email" type="email" #emailInput="ngModel" matInput [(ngModel)]="this.email" required email />
+                <mat-hint align="start">Join the mailing list for the latest 🐙</mat-hint>
+                <mat-hint align="end" class="danger" *ngIf="emailInput.invalid && emailInput.dirty">Please enter a valid email address</mat-hint>
+            </mat-form-field>
+        </div>
+        <button *ngIf="!this.sending" (click)="this.send()" disabled="{{ emailInput.pristine || emailInput.invalid && emailInput.dirty }}" mat-flat-button color="primary"><i class="fab fa-mailchimp"></i>&nbsp;Subscribe</button>
+    </form>
+    <mat-spinner *ngIf="this.sending" aria-label="loading"></mat-spinner>
 </div>

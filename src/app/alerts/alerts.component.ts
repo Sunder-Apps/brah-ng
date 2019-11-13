@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertsService } from './alerts.service';
 import { Alert, Answer } from './alert';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DefaultDialogComponent } from './default-dialog/default-dialog.component';
 
 @Component({
   selector: 'app-alerts',
@@ -9,19 +11,31 @@ import { Alert, Answer } from './alert';
 })
 export class AlertsComponent implements OnInit {
   alerts:Alert[]
-  alert:Alert
+  ref:MatDialogRef<DefaultDialogComponent>
 
-  constructor(private alertsService:AlertsService) { }
+  constructor(private alertsService:AlertsService,
+              private matDialog:MatDialog) { }
 
   ngOnInit() { 
     this.alertsService.alerts.subscribe((alerts) => {
       this.alerts = alerts;
-      this.alert = this.alerts[this.alerts.length - 1]
+      if (this.ref) {
+        this.ref.close()
+      }
+      for (var i = 0; i < this.alerts.length; i++) {
+        if (this.alerts[i].disabled == false) {
+          break;
+        }
+      }
+      if (i < this.alerts.length) {
+        this.ref = this.matDialog.open(DefaultDialogComponent, { 
+          data: this.alerts[i]
+        })
+        this.ref.afterClosed().subscribe(answer => {
+          this.alertsService.dismiss(i, parseInt(answer));
+        })
+      }
     })
-    this.alertsService.update();
-  }
-
-  dismiss (alertId:string, answer:Answer) {
-    this.alertsService.dismiss(alertId, answer);
+    this.alertsService.update()
   }
 }

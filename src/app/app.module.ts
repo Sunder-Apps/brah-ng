@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatChipsModule } from '@angular/material/chips'
 import { MatListModule } from '@angular/material/list'
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 import { AppComponent } from './app.component'
 import { AlertsComponent } from './alerts/alerts.component'
@@ -40,7 +42,8 @@ import { ContactService } from './contact/contact.service'
 import { SubscribeService } from './subscribe/subscribe.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SubscribeComponent } from './subscribe/subscribe.component';
-import { AppsComponent } from './apps/apps.component'
+import { AppsComponent } from './apps/apps.component';
+import { DefaultDialogComponent } from './alerts/default-dialog/default-dialog.component'
 
 @NgModule({
   declarations: [
@@ -66,6 +69,10 @@ import { AppsComponent } from './apps/apps.component'
     CartComponent,
     SubscribeComponent,
     AppsComponent,
+    DefaultDialogComponent,
+  ],
+  entryComponents: [
+    DefaultDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +87,9 @@ import { AppsComponent } from './apps/apps.component'
     MatFormFieldModule,
     MatInputModule,
     MatChipsModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AdsService,
@@ -89,8 +98,18 @@ import { AppsComponent } from './apps/apps.component'
     SettingsService,
     BackgroundService,
     ContactService,
-    SubscribeService
+    SubscribeService,
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    {
+      provide: MAT_DIALOG_DATA, 
+      useValue: {}
+    }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
