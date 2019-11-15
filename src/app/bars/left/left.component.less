@@ -233,36 +233,8 @@ nav {
             .toggle {
                 p {
                     left: 45px;
-                }
-                span {
-                    left: 10px;
-                    border-top-right-radius: unset;
-                    border-bottom-left-radius: unset;
-                    transform: rotate(90deg);
-
-                    &::before {
-                        left: -2px;
-                        top: -15px;
-                        width: 20px;
-                        height: 15px;
-                        background-color: transparent;
-                        border: solid 3px #ddd;
-                        border-top-left-radius: 5px;
-                        border-bottom-left-radius: 5px;
-                        transform: rotate(90deg);
-                    }
-
-                    &::after {
-                        left: 10px;
-                        top: -15px;
-                        width: 20px;
-                        height: 15px;
-                        background-color: transparent;
-                        border: solid 3px #ddd;
-                        border-bottom-left-radius: 5px;
-                        border-top-left-radius: 5px;
-                        transform: rotate(90deg);
-                    }
+                    opacity: 0;
+                    transition: opacity 300ms;
                 }
             }
         }
@@ -273,6 +245,14 @@ nav {
 
         &.open {
             left: 0px;
+
+            .head {
+                .toggle {
+                    p {
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }

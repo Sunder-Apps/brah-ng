@@ -43,7 +43,8 @@ import { SubscribeService } from './subscribe/subscribe.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { AppsComponent } from './apps/apps.component';
-import { DefaultDialogComponent } from './alerts/default-dialog/default-dialog.component'
+import { DefaultDialogComponent } from './alerts/default-dialog/default-dialog.component';
+import { SafePipe } from './pipes/safe.pipe'
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { DefaultDialogComponent } from './alerts/default-dialog/default-dialog.c
     SubscribeComponent,
     AppsComponent,
     DefaultDialogComponent,
+    SafePipe,
   ],
   entryComponents: [
     DefaultDialogComponent
