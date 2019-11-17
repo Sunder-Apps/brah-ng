@@ -35,11 +35,13 @@ export class BackgroundComponent implements OnInit {
     this.backgroundService.background3.subscribe(bg => {
       this.bg3.src = bg.src;
       this.bg3.position = bg.position;
+      this.bg4.poster = bg.poster;
       this.active = 3;
     })
     this.backgroundService.background4.subscribe(bg => {
       this.bg4.src = bg.src;
       this.bg4.position = bg.position;
+      this.bg4.poster = bg.poster;
       this.active = 4;
     })
     this.backgroundService.activate.subscribe(a => {
@@ -66,8 +68,9 @@ export class BackgroundComponent implements OnInit {
         
         let src = images[closestIndex].getAttribute('src'),
             position = images[closestIndex].getAttribute('position'),
-            transform = images[closestIndex].getAttribute('transform')
-        this.backgroundService.update(new Background(src, position, transform))
+            transform = images[closestIndex].getAttribute('transform'),
+            poster = images[closestIndex].getAttribute('poster')
+        this.backgroundService.update(new Background(src, position, transform, poster))
       }
     }
   } 
