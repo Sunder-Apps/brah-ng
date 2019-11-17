@@ -17,11 +17,9 @@
         <div class="section">
             <img class="bg" src="https://i.imgur.com/Yn18KLO.jpg" position="50% 50%" />
             <h3>Notable 2019 Accomplishments:</h3>
-            <mat-list>
-                <mat-list-item *ngFor="let accomplishment of this.epk.year2019">
-                    <p mat-line>{{ accomplishment }}</p>
-                </mat-list-item>
-            </mat-list>
+            <ul>
+                <li *ngFor="let accomplishment of this.epk.year2019">{{ accomplishment }}</li>
+            </ul>
         </div>
     </div>
     <div class="page">
