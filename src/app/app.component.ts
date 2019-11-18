@@ -13,6 +13,7 @@ import { BackgroundService } from './background/background.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+  opened:boolean = false
   theme:Theme = Theme.DARK
   snap:boolean = false
   konami:boolean = false

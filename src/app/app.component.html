@@ -1,7 +1,73 @@
 <div id="theme" [class.dark]="theme == 1" [class.light]="theme == 2" [class.konami]="konami" [class.snap]="snap">
-    <app-bars></app-bars>
+    <!--mat-toolbar>
+        <i class="fas fa-bars" (click)="this.opened = !this.opened"></i>
+        <h1>Brahctopus</h1>
+    </mat-toolbar>
+    <mat-sidenav-container>
+        <mat-sidenav [(opened)]="this.opened" mode="push">
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href="https://brahctopus-ink-llc.square.site/s/shop" target="_blank">
+                            <i class="fas fa-cash-register"></i>Squiggle Store
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/app/" routerLinkActive="active">
+                            <i class="fab fa-app-store"></i>Apps
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/enter-the-mothership/" routerLinkActive="active">
+                            <i class="fas fa-gamepad"></i>Enter the Mothership
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/music/" routerLinkActive="active">
+                            <i class="fab fa-itunes-note"></i>Music
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/visualizer/" routerLinkActive="active">
+                            <i class="fas fa-meteor"></i>Visualizer
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/photos/" routerLinkActive="active">
+                            <i class="fas fa-camera"></i>Photos
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/about/" routerLinkActive="active">
+                            <i class="far fa-address-card"></i>About Brahctopus
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/electronic-press-kit/" routerLinkActive="active">
+                            <i class="far fa-newspaper"></i>Electronic Press Kit
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/contact/" routerLinkActive="active">
+                            <i class="fas fa-phone"></i>Contact Us
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/subscribe/" routerLinkActive="active">
+                            <i class="fas fa-envelope"></i>Subscribe
+                        </a>
+                    </li>
+                </ul>    
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <app-background></app-background>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container-->
+    <app-background></app-background>
     <router-outlet></router-outlet>
+    <app-bars></app-bars>
     <app-footer></app-footer>
     <app-alerts></app-alerts>
-    <app-background></app-background>
 </div>

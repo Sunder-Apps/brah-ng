@@ -44,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { AppsComponent } from './apps/apps.component';
 import { DefaultDialogComponent } from './alerts/default-dialog/default-dialog.component';
-import { SafePipe } from './pipes/safe.pipe'
+import { SafePipe } from './pipes/safe.pipe';
+import { MatToolbarModule, MatSidenavModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,9 @@ import { SafePipe } from './pipes/safe.pipe'
     MatChipsModule,
     MatListModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatSidenavModule
   ],
   providers: [
     AdsService,

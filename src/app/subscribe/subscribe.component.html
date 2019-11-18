@@ -5,7 +5,7 @@
             <mat-form-field appearance="fill">
                 <mat-label><i class="fas fa-envelope"></i>&nbsp;Email</mat-label>
                 <input name="email" type="email" #emailInput="ngModel" matInput [(ngModel)]="this.email" required email />
-                <mat-hint align="start">Join the mailing list for the latest 🐙</mat-hint>
+                <mat-hint align="start">Join the mailing list for the latest <span matTooltip="ink">🐙</span></mat-hint>
                 <mat-hint align="end" class="danger" *ngIf="emailInput.invalid && emailInput.dirty">Please enter a valid email address</mat-hint>
             </mat-form-field>
         </div>

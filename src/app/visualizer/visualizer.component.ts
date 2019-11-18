@@ -31,7 +31,7 @@ export class VisualizerComponent implements OnInit {
     {
       name: '360°',
       url: 'https://www.youtube.com/playlist?list=PLHSK04x2gyOTyral2ZunzJuQKsonHvV2R',
-      background: 'https://i.imgur.com/trF3xoG.jpg',
+      background: 'https://i.imgur.com/l7ijX41.jpg',
       videos: [
         {
           src: 'https://www.youtube.com/embed/o1ZwQtpi5Fg',
