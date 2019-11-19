@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
 import { Playlist } from './playlist'
-import { Video } from './video'
 
 @Component({
   selector: 'app-visualizer',

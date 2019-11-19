@@ -1,6 +1,50 @@
 <div class="container">
-    <img class="bg" src="https://i.imgur.com/P4n1AQU.jpg" position="50% 50%" />
-    <h1>Photos</h1>
-    <h2>Coming soon!</h2>
-    <div class="photos"></div>
+    <div class="gallery" *ngFor="let album of this.galleries; let i = index">
+        <img class="bg" [src]="album.bg" />
+        <h2>{{ album.title }}</h2>
+        <h3>{{ album.description }}</h3>
+        <div class="images">
+            <img *ngFor="let image of album.images; let j = index" 
+                 [attr.gallery]="i"
+                 [attr.image]="j"
+                 [src]="image.msrc" 
+                 [class.tall]="image.h > image.w" 
+                 (click)="this.open($event)" />
+        </div>
+    </div>
+</div>
+
+<div id="pswp" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__inc">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
 </div>
