@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core'
+import { Component, OnInit, Renderer2 } from '@angular/core'
 import { Bar, BarsService } from './bars.service'
 
 @Component({
@@ -8,7 +8,8 @@ import { Bar, BarsService } from './bars.service'
 })
 export class BarsComponent implements OnInit {
   isOpen:boolean = false
-  constructor (public barsService:BarsService) { }
+  constructor (public barsService:BarsService,
+               public renderer2:Renderer2) { }
   
   ngOnInit() {
     this.barsService.isOpen.subscribe(bars => {
@@ -20,6 +21,11 @@ export class BarsComponent implements OnInit {
         }
       })
       this.isOpen = open;
+      if (this.isOpen) {
+        this.renderer2.addClass(document.body, 'open')
+      } else {
+        this.renderer2.removeClass(document.body, 'open')
+      }
     })
     this.close()
   }
