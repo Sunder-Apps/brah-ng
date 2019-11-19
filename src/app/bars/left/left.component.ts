@@ -21,4 +21,16 @@ export class LeftComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  close () {
+    this.barsService.setBar(Bar.NONE)
+  }
+
+  toggle () {
+    if (this.isOpen) {
+      this.barsService.setBar(Bar.NONE)
+    } else {
+      this.barsService.setBar(Bar.LEFT)
+    }
+  }
 }
