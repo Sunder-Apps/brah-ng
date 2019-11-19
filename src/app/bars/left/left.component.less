@@ -1,11 +1,145 @@
 // out: false
-nav {
+.navbar {
+    display: flex;
+    justify-content: space-between;
     position: fixed;
+    left: 0;
     top: 0;
+    height: 60px;
+    width: 60px;
+    max-width: 500px;
+    background-color: var(--back);
+    transition: width 300ms;
+
+    .toggle {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        background-color: var(--back);
+        color: var(--blue);
+        border: none;
+        border-left: 5px solid var(--brah-blue);
+        cursor: pointer;
+        transition: 300ms;
+        font-family: 'Palanquin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 14px;
+        z-index: 9999;
+
+        span {
+            top: 28px;
+            left: 19px;
+            right: 50px;
+
+            &, &::before, &::after {
+                display: block;
+                position: absolute;
+                height: 3px;
+                width: 26px;
+                background-color: var(--fore);
+                content: '';
+                transition: 300ms;
+            }
+
+            &::before {
+                top: -7px;
+                left: 0px;
+            }
+
+            &::after {
+                bottom: -7px;
+                left: 0px;
+            }
+        }
+
+        p {
+            position: absolute;
+            margin: 0;
+            top: 8px;
+            left: 60px;
+            font-size: 1.5em;
+            line-height: 55px;
+            color: var(--fore);
+            pointer-events: none;
+            opacity: 0;
+            transition: left 300ms, opacity 300ms;
+        }
+
+        &:hover, &:active, &:focus {
+            border-color: var(--brah-blue);
+        }
+    }
+
+    &.open {
+        width: 100%;
+
+        .toggle {
+            p {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.open, &:hover {
+        .toggle {
+            span {
+                left: 10px;
+                border-top-right-radius: unset;
+                border-bottom-left-radius: unset;
+                transform: rotate(90deg);
+
+                &::before {
+                    left: -2px;
+                    top: -15px;
+                    width: 20px;
+                    height: 15px;
+                    background-color: transparent;
+                    border: solid 3px #ddd;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    transform: rotate(90deg);
+                }
+
+                &::after {
+                    left: 10px;
+                    top: -15px;
+                    width: 20px;
+                    height: 15px;
+                    background-color: transparent;
+                    border: solid 3px #ddd;
+                    border-bottom-left-radius: 5px;
+                    border-top-left-radius: 5px;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    /*&.open, &:hover {
+        .toggle {
+            span {
+                border-top-right-radius: 2px;
+                border-bottom-left-radius: 2px;
+                &::before {
+                    transform: matrix(1, 0, -1, 1, 2, 0);
+                    border-top-left-radius: 2px;
+                }
+                &::after {
+                    transform: matrix(1, 0, -1, 1, -2, 0);
+                    border-bottom-right-radius: 2px;
+                }
+            }
+        }
+    }*/
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px;
     left: 0;
     width: 60px;
     max-width: 500px;
-    height: 100vh;
+    height: ~"calc(100vh - 90px)";
     transition: width 300ms, left 300ms;
     background-color: var(--back);
     z-index: 999;
@@ -14,64 +148,6 @@ nav {
     .wrap {
         width: 500px;
         max-width: 100vw;
-    }
-
-    .head {
-        display: flex;
-        justify-content: space-between;
-        height: 60px;
-        background-color: var(--back);
-
-        .toggle {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 60px;
-            background-color: var(--back);
-            color: var(--blue);
-            border: none;
-            border-left: 5px solid var(--brah-blue);
-            cursor: pointer;
-            transition: 300ms;
-            font-family: 'Palanquin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 14px;
-            z-index: 99999;
-
-            span {
-                top: 28px;
-                left: 19px;
-                right: 50px;
-
-                &, &::before, &::after {
-                    display: block;
-                    position: absolute;
-                    height: 3px;
-                    width: 26px;
-                    background-color: var(--fore);
-                    content: '';
-                    transition: 300ms;
-                }
-
-                &::before {
-                    top: -7px;
-                    left: 0px;
-                }
-
-                &::after {
-                    bottom: -7px;
-                    left: 0px;
-                }
-            }
-
-            p {
-                position: absolute;
-                left: 60px;
-                font-size: 1.5em;
-                line-height: 55px;
-                color: var(--fore);
-                pointer-events: none;
-            }
-        }
     }
 
     ul {
@@ -137,129 +213,27 @@ nav {
     &.open {
         width: 100%;
     }
-
-    &:hover, &.open {
-        .head {
-            .toggle {
-                span {
-                    border-top-right-radius: 2px;
-                    border-bottom-left-radius: 2px;
-                    &::before {
-                        transform: matrix(1, 0, -1, 1, 2, 0);
-                        border-top-left-radius: 2px;
-                    }
-                    &::after {
-                        transform: matrix(1, 0, -1, 1, -2, 0);
-                        border-bottom-right-radius: 2px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-nav {
-    .head {
-        .toggle {
-            p {
-                margin: 0;
-                top: 8px;
-                transition: left 300ms;
-            }
-
-            &:hover, &:active, &:focus, &.open {
-                border-color: var(--brah-blue);
-            }
-        }
-    }
-
-    &.open {
-        .head {
-            .toggle {
-                p {
-                    left: 45px;
-                }
-            }
-        }
-    }
-
-    &:hover, &:active, &:focus, &.open {
-        .head {
-            .toggle {
-                span {
-                    left: 10px;
-                    border-top-right-radius: unset;
-                    border-bottom-left-radius: unset;
-                    transform: rotate(90deg);
-
-                    &::before {
-                        left: -2px;
-                        top: -15px;
-                        width: 20px;
-                        height: 15px;
-                        background-color: transparent;
-                        border: solid 3px #ddd;
-                        border-top-left-radius: 5px;
-                        border-bottom-left-radius: 5px;
-                        transform: rotate(90deg);
-                    }
-
-                    &::after {
-                        left: 10px;
-                        top: -15px;
-                        width: 20px;
-                        height: 15px;
-                        background-color: transparent;
-                        border: solid 3px #ddd;
-                        border-bottom-left-radius: 5px;
-                        border-top-left-radius: 5px;
-                        transform: rotate(90deg);
-                    }
-                }
-            }
-        }
-    }
 }
 
 @media(orientation: portrait) {
-    nav {
-        left: -60px;
+    .navbar {
+        width: 100%;
+        max-width: unset;
+        background-color: var(--back);
 
-        .head {
-            position: fixed;
-            left: 0;
-            width: 100%;
-            background-color: var(--back);
-            z-index: 99999;
-
-            .toggle {
-                position: fixed;
-                left: 0;
-                width: 100%;
-                background-color: var(--back);
-                z-index: 999999;
-                p {
-                    left: 45px;
-                    opacity: 0;
-                    transition: opacity 300ms;
-                }
+        .toggle {
+            p {
+                left: 45px;
+                opacity: 0;
+                transition: opacity 300ms;
             }
         }
+    }
 
-        .links {
-            padding-top: 60px;
-        }
-
+    .sidebar {
+        left: -60px;
         &.open {
             left: 0px;
-
-            .head {
-                .toggle {
-                    p {
-                        opacity: 1;
-                    }
-                }
-            }
         }
     }
 }

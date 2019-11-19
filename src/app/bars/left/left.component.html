@@ -1,8 +1,8 @@
-<nav [class.open]="this.isOpen">
+<nav class="navbar" [class.open]="this.isOpen" (click)="this.isOpen = !this.isOpen">
+    <button class="toggle"><span></span><p>rahctopus</p></button>
+</nav>
+<nav class="sidebar" [class.open]="this.isOpen">
     <div class="wrap">
-        <div class="head" (click)="this.isOpen = !this.isOpen">
-            <button class="toggle"><span></span><p>rahctopus</p></button>
-        </div>
         <div class="links">
             <ul>
                 <li>
