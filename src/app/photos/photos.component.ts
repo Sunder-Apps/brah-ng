@@ -411,8 +411,8 @@ export class PhotosComponent implements OnInit {
 
   open ($event) {
     let target = $event.target,
-      gallery = target.getAttribute('gallery'),
-      image = target.getAttribute('image'),
+      gallery = parseInt(target.getAttribute('gallery')),
+      image = parseInt(target.getAttribute('image')),
       pswp = document.getElementById('pswp'),
       options = {
           index: image,
@@ -421,7 +421,6 @@ export class PhotosComponent implements OnInit {
               return { x: target.offsetLeft, y: target.offsetTop, w: target.offsetWidth }
           }
       };
-    console.log(gallery,image,pswp,options)
     if (pswp) {
         let photoSwipe = new PhotoSwipe(pswp, PhotoSwipeUI_Default, this.galleries[gallery].images, options);
         photoSwipe.init();
