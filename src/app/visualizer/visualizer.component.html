@@ -17,7 +17,7 @@
             <div class="grid">
                 <div class="vid" *ngFor="let video of playlist.videos">
                     <iframe [src]="video.src | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <img src="{{ video.poster }}" (click)="$event.currentTarget.style.pointerEvents = 'none';$event.currentTarget.style.opacity = 0" />
+                    <img [src]="video.poster" (click)="$event.currentTarget.style.pointerEvents = 'none';$event.currentTarget.style.opacity = 0" />
                 </div>
             </div>
         </div>
