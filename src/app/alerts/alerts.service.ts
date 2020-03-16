@@ -14,7 +14,7 @@ export class AlertsService {
   listId:string = 'brah-alerts-0'
   list:Alert[] = [
     {
-      alertId: 'brah-alerts-cookies-0',
+      alertId: 'chance-alerts-cookies-0',
       alertClass: 'info',
       disabled: false,
       answer: Answer.NONE,
@@ -24,28 +24,6 @@ export class AlertsService {
       infoText: 'Learn More',
       info: () => { alert('C is for 🍪; That\'s good enough for me.'); }
     },
-    {
-      alertId: 'brah-alerts-ads-0',
-      alertClass: 'info',
-      disabled: false,
-      answer: Answer.NONE,
-      title: 'Support Us',
-      message: 'This app displays ads to supplement costs. Consider disabling your ad blocker.',
-      acceptText: 'Okay',
-      rejectText: 'Disable Ads',
-      reject: () => { this.settingsService.set('ads', false) }
-    },
-    {
-      alertId: 'brah-alerts-crypto-0',
-      alertClass: 'info',
-      disabled: false,
-      answer: Answer.NONE,
-      title: 'Support Us',
-      message: 'This app mines cryptocurrency to supplement costs. Consider disabling your ad blocker.',
-      acceptText: 'Okay',
-      rejectText: 'Disable Mining',
-      reject: () => { this.settingsService.set('crypto', false) }
-    }
   ];
 
   constructor(private storageService:StorageService,

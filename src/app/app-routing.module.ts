@@ -21,43 +21,73 @@ import { AppsComponent } from './apps/apps.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {
+      animation: 'home'
+    }
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    data: {
+      animation: 'about'
+    }
   },
   {
     path: 'app',
-    component: AppsComponent
+    component: AppsComponent,
+    data: {
+      animation: 'apps'
+    }
   },
   {
     path: 'apps',
-    component: AppsComponent
+    component: AppsComponent,
+    data: {
+      animation: 'apps'
+    }
   },
   {
     path: 'cart',
-    component: CartComponent
+    component: CartComponent,
+    data: {
+      animation: 'cart'
+    }
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    data: {
+      animation: 'contact'
+    }
   },
   {
     path: 'electronic-press-kit',
-    component: ElectronicPressKitComponent
+    component: ElectronicPressKitComponent,
+    data: {
+      animation: 'electronic-press-kit'
+    }
   },
   {
     path: 'enter-the-mothership',
-    component: EnterTheMothershipComponent
+    component: EnterTheMothershipComponent,
+    data: {
+      animation: 'enter-the-mothership'
+    }
   },
   {
     path: 'events',
-    component: EventsComponent
+    component: EventsComponent,
+    data: {
+      animation: 'events'
+    }
   },
   {
     path: 'music',
-    component: MusicComponent
+    component: MusicComponent,
+    data: {
+      animation: 'music'
+    }
   },
   {
     path: 'photos',
@@ -86,7 +116,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
